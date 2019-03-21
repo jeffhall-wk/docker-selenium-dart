@@ -6,7 +6,7 @@ MAINTAINER Raphael Adam <raphael.adam@workiva.com, raphael912003@gmail.com>
 LABEL Description="This image contains: Selenium-HQ with Chrome; the Dart SDK; and Sauce Connect"
 
 ENV CHANNEL stable
-ENV SDK_VERSION latest
+ENV SDK_VERSION 1.24.3
 ENV ARCHIVE_URL https://storage.googleapis.com/dart-archive/channels/$CHANNEL/release/$SDK_VERSION
 ENV SC_VERSION 4.4.6
 ENV PATH $PATH:/usr/lib/dart/bin
@@ -47,3 +47,5 @@ RUN git clone https://github.com/vslavik/diff-pdf.git \
   && ./configure \
   && make \
   && make install
+  
+RUN apt-get install -y python-pip
